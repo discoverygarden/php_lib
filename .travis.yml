@@ -30,4 +30,4 @@ before_script:
 script:
   - ant -buildfile sites/all/modules/php_lib/build.xml lint
   - $ISLANDORA_DIR/tests/scripts/line_endings.sh sites/all/modules/php_lib
-  - drush test-run -v --uri=http://localhost:8081 "PHP Lib"
+  - php scripts/run-tests.sh --php `phpenv which php` --url http://localhost:8081 --verbose "PHP Lib"
