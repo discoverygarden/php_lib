@@ -1,3 +1,4 @@
+sudo: required
 language: php
 php:
   - 5.3.3
@@ -23,7 +24,10 @@ before_install:
   - cd $HOME/drupal-*
   - ln -s $TRAVIS_BUILD_DIR sites/all/modules/php_lib
   - drush en --yes --user=1 php_lib
+before_script:
+  # Mysql might time out for long tests, increase the wait timeout.
+  - mysql -e 'SET @@GLOBAL.wait_timeout=1200'
 script:
   - ant -buildfile sites/all/modules/php_lib/build.xml lint
   - $ISLANDORA_DIR/tests/scripts/line_endings.sh sites/all/modules/php_lib
-  - drush test-run -v --uri=http://localhost:8081 "PHP Lib"
+  - php scripts/run-tests.sh --php `phpenv which php` --url http://localhost:8081 --verbose "PHP Lib"
