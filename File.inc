@@ -1314,7 +1314,7 @@ function fungets($handle, $length = 0) {
   $length = ($length > 0) ? min($length - 1, $offset) : $offset;
   // For consistency with fgets we treat length as starting from 1 rather than 0.
   $diff = $offset - $length;
-  $s = drupal_substr($s, $offset - $length, $length);
+  $s = \Drupal\Component\Utility\Unicode::substr($s, $offset - $length, $length);
   // Take out the chunk we are interested in.
   fseek($handle, $pos - $length - 1, SEEK_SET);
   // Move our pointer to character preceding the amount read out.

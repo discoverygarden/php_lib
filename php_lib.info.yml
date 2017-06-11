@@ -1,0 +1,6 @@
+name: 'PHP Lib'
+description: 'A collection of interfaces classes and functions that can be used in a variety of environments.'
+package: 'Islandora Dependencies'
+core: 8.x
+php: '5.2'
+type: module
