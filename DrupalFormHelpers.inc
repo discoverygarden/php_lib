@@ -28,7 +28,7 @@ function &get_form_element_parent(array $element, array &$form) {
  */
 function propagate_form_element_property(array &$element, $property) {
   $element[$property] = get_form_element_property($element, $property);
-  foreach (element_children($element) as $key) {
+  foreach (\Drupal\Core\Render\Element::children($element) as $key) {
     $child = &$element[$key];
     if (!isset($child[$property])) {
 
@@ -62,7 +62,7 @@ function get_form_element_property(array &$element, $property) {
  * @return array
  */
 function get_element_children(array &$element, $type) {
-  $children = element_children($element);
+  $children = \Drupal\Core\Render\Element::children($element);
   foreach ($children as $key => $child) {
     if (empty($element[$child]['#type']) || $element[$child]['#type'] != $type) {
       unset($children[$key]);

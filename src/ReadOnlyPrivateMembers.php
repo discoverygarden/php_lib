@@ -1,9 +1,5 @@
 <?php
-// @codingStandardsIgnoreStart
-/**
- * @file
- */
-module_load_include('inc', 'php_lib', 'Backtrace');
+namespace Drupal\php_lib;
 
 /**
  *
@@ -125,4 +121,3 @@ class ReadOnlyPrivateMembers {
   }
 
 }
-// @codingStandardsIgnoreEnd

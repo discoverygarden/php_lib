@@ -1,10 +1,5 @@
 <?php
-// @codingStandardsIgnoreStart
-/**
- * @file
- */
-module_load_include('inc', 'php_lib', 'ReadOnlyPrivateMembers');
-module_load_include('inc', 'php_lib', 'ReadOnlyProtectedMembers');
+namespace Drupal\php_lib;
 
 /**
  *
@@ -107,4 +102,3 @@ class ReadOnlyMembers {
   }
 
 }
-// @codingStandardsIgnoreEnd

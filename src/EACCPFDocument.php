@@ -1,10 +1,5 @@
 <?php
-// @codingStandardsIgnoreStart
-/**
- * @file
- * Abstracts EAC-CPF xml document into a PHP class where the maintence history is maintained automatically by the class.
- */
-module_load_include('inc', 'islandora_metadata', 'XMLDocument');
+namespace Drupal\php_lib;
 
 /**
  * EACCPFType:.
@@ -60,7 +55,6 @@ enum('EACCPFMaintenceEventType', array(
   'updated' => 'cancelled',
 )
 );
-
 /**
  *
  */
@@ -200,4 +194,3 @@ class EACCPFDocument extends _XMLDocument {
   }
 
 }
-// @codingStandardsIgnoreEnd

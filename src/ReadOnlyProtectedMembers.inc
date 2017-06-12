@@ -1,4 +1,5 @@
 <?php
+namespace Drupal\php_lib;
 // @codingStandardsIgnoreStart
 /**
  * @file

@@ -1,10 +1,5 @@
 <?php
-// @codingStandardsIgnoreStart
-/**
- * @file
- */
-module_load_include('inc', 'php_lib', 'Backtrace');
-module_load_include('inc', 'php_lib', 'Array');
+namespace Drupal\php_lib;
 
 /**
  * Models memeber access.
@@ -163,4 +158,3 @@ class Members {
   }
 
 }
-// @codingStandardsIgnoreEnd
