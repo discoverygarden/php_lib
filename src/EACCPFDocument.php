@@ -2,6 +2,60 @@
 namespace Drupal\php_lib;
 
 /**
+ * EACCPFType:.
+ *
+ * SINGLE IDENTITY: one person (or corporate body or family) with a single identity represented in one
+ * EAC-CPF instance. (Most common)
+ *
+ * MULTIPLE IDENTITY-MANY IN ONE: two or more identities (including official identities) with each represented by
+ * distinct descriptions within one EAC-CPF instance. Can be programmatically converted into Multiple Identity-One
+ * in Many. (Less common though not rare).
+ *
+ * MULTIPLE IDENTITY-ONE IN MANY: two or more identities (including official identities) each represented in two or
+ * more interrelated EAC-CPF instances. Can be programmatically converted into Multiple Identity-Many in One.
+ * (Less common though not rare).
+ *
+ * ALTERNATIVE SET: derived EAC-CPF instance that is based on and incorporates two or more alternative EAC-CPF
+ * instances for the same entity. To be used by a consortia or a utility providing union access to authority records
+ * maintained in two or more systems by two or more agencies. Alternative EAC-CPF instances may be in different
+ * languages or in the same language.
+ *
+ * COLLABORATIVE IDENTITY: a single identity shared by two or more persons (e.g. a shared pseudonym used in creation
+ * of a collaborative work). Use Multiple Identity-One in Many. (Rare).
+ */
+enum('EACCPFType', array(
+  'SINGLE_IDENTITY',
+  'MULTIPLE_IDENTITY_MANY_IN_ONE',
+  'MULTIPLE_IDENTITY_ONE_IN_MANY',
+  'ALTERNATIVE_SET',
+  'COLLABORATIVE_IDENTITY',
+));
+enum('EACCPFMaintenceStatusType', array(
+  'revised' => 'revised',
+  'deleted' => 'deleted',
+  'new' => 'created',
+// Since the new keyword is prohibited use created to reference new.
+  'deletedSplit' => 'deletedSplit',
+  'deletedReplaced' => 'deletedReplaced',
+  'cancelled' => 'cancelled',
+  'derived' => 'derived',
+)
+);
+enum('EACCPFAgentType', array(
+  'human' => 'human',
+  'machine' => 'machine',
+)
+);
+enum('EACCPFMaintenceEventType', array(
+  'created' => 'created',
+  'revised' => 'revised',
+  'deleted' => 'deleted',
+  'cancelled' => 'cancelled',
+  'derived' => 'cancelled',
+  'updated' => 'cancelled',
+)
+);
+/**
  *
  */
 class EACCPFDocument extends _XMLDocument {

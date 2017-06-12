@@ -7,3 +7,8 @@
  * Only include files and functions that need to be
  * accessible without a call to module_load_include.
  */
+
+/**
+ * Enumerated Types.
+ */
+enum('XMLSchemaFormat', array('DTD', 'XSD', 'relaxNG'));
