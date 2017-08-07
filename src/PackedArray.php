@@ -4,7 +4,7 @@ namespace Drupal\php_lib;
 /**
  *
  */
-class PackedArray implements ArrayAccess, Serializable {
+class PackedArray implements \ArrayAccess, Serializable {
 
   protected $array = array();
 
