@@ -56,7 +56,7 @@ abstract class Enum {
    * @return array
    */
   public function getConstList($include_default = FALSE) {
-    $reflection = new ReflectionClass($this);
+    $reflection = new \ReflectionClass($this);
     $consts = $reflection->getConstants();
     if ($include_default === FALSE) {
       unset($consts['__default']);
