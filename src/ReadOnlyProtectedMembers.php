@@ -118,6 +118,7 @@ class ReadOnlyProtectedMembers {
    * @param mixed $value
    */
   public function __set($name, $value) {
+    module_load_include('inc', 'php_lib', 'ReflectionHelpers');
     if ($this->has($name)) {
       if (is_or_descends_from(get_caller_object($this->depth), $this->owner)) {
         $this->values[$name] = $value;
