@@ -103,32 +103,6 @@ function format_dom_document(DOMDocument $document) {
 }
 
 /**
- * Includes the files required for the DOMDocument pretty print to function.
- */
-function dom_document_pretty_print_include_files() {
-  $path = drupal_get_path('module', 'php_lib');
-  // @FIXME
-// The Assets API has totally changed. CSS, JavaScript, and libraries are now
-// attached directly to render arrays using the #attached property.
-// 
-// 
-// @see https://www.drupal.org/node/2169605
-// @see https://www.drupal.org/node/2408597
-// drupal_add_js("$path/js/pretty-print/prettify.js");
-
-  // @FIXME
-// The Assets API has totally changed. CSS, JavaScript, and libraries are now
-// attached directly to render arrays using the #attached property.
-// 
-// 
-// @see https://www.drupal.org/node/2169605
-// @see https://www.drupal.org/node/2408597
-// drupal_add_css("$path/js/pretty-print/prettify.css");
-
-  // @todo move pretty print to a its own module or a lib folder.
-}
-
-/**
  * Pretty print the given document, to the browswer.
  *
  * @param DOMDocument $document
