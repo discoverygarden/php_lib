@@ -1,13 +1,16 @@
 <?php
+
 namespace Drupal\php_lib;
 
 /**
- * Only supports one level of extension, all child classes should be declared final.
+ * Supports one level of extension, all child classes should be declared final.
  *
- * Since Operator overloading is only availible via PECL extensions we need to compare the values directly or
- * via objects. So Statements like Enum::Const == new Enum(Enum::Const) won't work like they would with SplEnum.
+ * Since Operator overloading is only availible via PECL extensions we need to
+ * compare the values directly or via objects. So Statements like
+ * Enum::Const == new Enum(Enum::Const) won't work like they would with SplEnum.
  *
- * To compare and object and const value we can do something like Enum::Const == (new Enum(Enum::Const))->val;
+ * To compare and object and const value we can do something like
+ * Enum::Const == (new Enum(Enum::Const))->val;
  */
 abstract class Enum {
 
@@ -21,11 +24,12 @@ abstract class Enum {
   /**
    * Create an Enumerated instance.
    *
+   * @param string|int|object $value
+   *
    * @throws InvalidArgumentException
-   * @param string or int or object... $value
    */
   public function __construct($value = NULL) {
-    $this->protected = new ReadOnlyProtectedMembers(array('val' => NULL));
+    $this->protected = new ReadOnlyProtectedMembers(['val' => NULL]);
     $consts = $this->getConstList(TRUE);
     $use_default = $value === NULL;
     if ($use_default) {
@@ -50,7 +54,7 @@ abstract class Enum {
   /**
    * Gets the list of the defined constants.
    *
-   * @param bool $include_defaultInclude __default in the output?
+   * @param bool $include_default
    *   Include __default in the output?
    *
    * @return array

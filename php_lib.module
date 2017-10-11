@@ -7,8 +7,9 @@
  * Only include files and functions that need to be
  * accessible without a call to module_load_include.
  */
+
 module_load_include('inc', 'php_lib', 'Enum');
 /**
  * Enumerated Types.
  */
-enum('XMLSchemaFormat', array('DTD', 'XSD', 'relaxNG'));
+enum('XMLSchemaFormat', ['DTD', 'XSD', 'relaxNG']);
