@@ -1,5 +1,8 @@
 <?php
+
 namespace Drupal\php_lib;
+
+use DOMDocument;
 
 /**
  * Validates DOMDocuments.

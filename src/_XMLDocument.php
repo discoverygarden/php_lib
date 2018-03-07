@@ -1,5 +1,9 @@
 <?php
+
 namespace Drupal\php_lib;
+
+use DOMDocument;
+use DOMXPath;
 
 /**
  * Handles generic XML concepts and data.
